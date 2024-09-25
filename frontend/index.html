@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form" class="form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="login-email">UserName*</label>
+                <input type="email" id="login-email" class="form-control" value="info@desai.net">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password*</label>
+                <input type="password" id="login-password" class="form-control" value="Keypulse@123">
+            </div>
+            <button class="button" onclick="handleLogin(event)">Login</button>
+            <p class="link" onclick="toggleForgotPasswordModal()">Forgot Password</p>
+            <p>Don't have an account? <span class="link" onclick="showRegisterForm()">Register</span></p>
+        </div>
+
+        <div id="register-form" class="form" style="display: none;">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="register-username">User Name*</label>
+                <input type="text" id="register-username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email*</label>
+                <input type="email" id="register-email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password*</label>
+                <input type="password" id="register-password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="register-password2">Confirm Password*</label>
+                <input type="password" id="register-password2" class="form-control">
+            </div>
+            <button class="button" type="submit" onclick="handleRegister(event)">Register</button>
+            <p>Already have an account? <span class="link" onclick="showLoginForm()">Login</span></p>
+        </div>
+    </div>
+
+    <div id="forgot-password-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h5>Forgot Password</h5>
+            <button onclick="toggleForgotPasswordModal()" style="float: right;">X</button>
+            <div class="form-group">
+                <label for="forgot-email">Enter your email</label>
+                <input type="email" id="forgot-email" class="form-control">
+            </div>
+            <button class="button" onclick="handleForgotPassword(event)">Send Reset Link</button>
+            <p id="forgot-password-message"></p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

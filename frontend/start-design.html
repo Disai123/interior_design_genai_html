@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Generator</title>
+    <link rel="stylesheet" href="start-design.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="design-form">
+                <div class="form-group">
+                    <label for="api_key">API Key</label>
+                    <input type="text" id="api_key" name="api_key" placeholder="Enter API Key" required>
+                </div>
+                <div class="form-group">
+                    <label for="selected_room_type">Select Room Type</label>
+                    <select id="selected_room_type" name="selected_room_type" required>
+                        <option value="">Select</option>
+                        <option value="Livingroom">Living Room</option>
+                        <option value="Bedroom">Bed Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="selected_style">Select Style</label>
+                    <select id="selected_style" name="selected_style" required>
+                        <option value="">Select</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Minimal">Minimal</option>
+                        <option value="Contemporary">Contemporary</option>
+                        <option value="Traditional">Traditional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="selected_room_color">Select Color</label>
+                    <select id="selected_room_color" name="selected_room_color" required>
+                        <option value="">Select</option>
+                        <option value="Red">Red</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Green">Green</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additional_instructions">Prompt</label>
+                    <input type="text" id="additional_instructions" name="additional_instructions" placeholder="Enter Instructions" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Email" required>
+                </div>
+                <button type="submit">Generate Image</button>
+                <button type="button" id="send-email">Send to Mail</button>
+            </form>
+        </div>
+        <div id="result-container" class="result-container">
+            <!-- Image will be displayed here -->
+            <img id="result-image" src="" alt="Generated Interior Design" style="display: none;">
+            <!-- Error message will be displayed here -->
+            <p id="error-message" style="color: red;"></p>
+        </div>
+    </div>
+    <script src="start-design.js"></script>
+</body>
+</html>
